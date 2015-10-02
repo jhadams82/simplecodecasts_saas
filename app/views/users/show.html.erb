@@ -1,1 +1,31 @@
-<%= @user %>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="well">
+            <p>
+                <h4>Name:</h4>
+                <h6><%= @user.profile.first_name %> <%= @user.profile.last_name %></h6>
+                <br/>
+            </p>
+            
+            <% if current_user.plan_id == 2 %>
+                <p>
+                    <h4>Phone Number:</h4>
+                    <h6><%= @user.profile.phone_number %></h6>
+                    <br/>
+                </p>
+                <p>
+                    <h4>Email:</h4>
+                    <h6><%= @user.profile.contact_email %></h6>
+                    <br/>
+                </p>
+            <% end %>
+            
+            <p>
+                <h4>Description:</h4>
+                <h6><%= @user.profile.description %></h6>
+                <br/>
+            </p>
+            
+        </div>
+    </div>
+</div>
